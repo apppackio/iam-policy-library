@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block analytics %}
+       <script async defer data-domain="iam-policy-library.apppack.io" src="https://plausible.io/js/plausible.js"></script>
+{% endblock %}
+{% block content %}
+{{ super() }}
+
+{% if page.is_homepage %}
+<h3>AWS Services</h3>
+<ul>
+{% for p in nav %}
+{% if not p.is_homepage %}
+       <li><a href="{{ p.url }}">{{ p.title }}</a></li>
+{% endif %}
+{% endfor %}
+</ul>
+{% endif %}
+{% endblock %}

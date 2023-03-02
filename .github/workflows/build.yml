@@ -1,0 +1,39 @@
+---
+name: build
+on:
+  push: {}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup PDM
+        uses: pdm-project/setup-pdm@main
+        with:
+          python-version: "3.11"
+          cache: true
+      - name: Install dependencies
+        run: pdm install
+      - name: Build
+        run: pdm run mkdocs build --verbose --clean
+      - name: Upload artifact
+        if: github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: public
+          retention-days: 3
+
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1

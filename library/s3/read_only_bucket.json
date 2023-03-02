@@ -1,0 +1,23 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "FindAndListBucket",
+      "Effect": "Allow",
+      "Action": ["s3:GetBucketLocation", "s3:ListBucket"],
+      "Resource": "arn:aws:${Partition}:::${Bucket}"
+    },
+    {
+      "Sid": "GetObjects",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:GetObjectAcl",
+        "s3:GetObjectLegalHold",
+        "s3:GetObjectRetention",
+        "s3:GetObjectTagging"
+      ],
+      "Resource": "arn:${Partition}:s3:::${Bucket}/*"
+    }
+  ]
+}

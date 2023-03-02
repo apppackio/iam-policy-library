@@ -1,0 +1,36 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "FindBucket",
+      "Effect": "Allow",
+      "Action": "s3:GetBucketLocation",
+      "Resource": "arn:aws:${Partition}:::${Bucket}"
+    },
+    {
+      "Sid": "ListBucketWithPrefix",
+      "Effect": "Allow",
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:${Partition}:::${Bucket}",
+      "Condition": {
+        "StringLike": {
+          "s3:prefix": "${Prefix}/*"
+        }
+      }
+    },
+    {
+      "Sid": "ManageObjectsWithPrefix",
+      "Effect": "Allow",
+      "Action": [
+        "s3:DeleteObject",
+        "s3:GetObject",
+        "s3:GetObjectAcl",
+        "s3:GetObjectLegalHold",
+        "s3:GetObjectRetention",
+        "s3:GetObjectTagging",
+        "s3:PutObject"
+      ],
+      "Resource": "arn:${Partition}:s3:::${Bucket}/${Prefix}/*"
+    }
+  ]
+}

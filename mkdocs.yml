@@ -1,0 +1,25 @@
+---
+site_name: AWS IAM Policy Library
+docs_dir: src
+site_dir: public
+site_url: !ENV [SITE_URL, "http://localhost:8000/"]
+use_directory_urls: true
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+plugins:
+  - search
+  - macros
+repo_url: https://github.com/apppackio/iam-policy-library/
+edit_uri: edit/main/src/
+theme:
+  name: material
+  custom_dir: theme_overrides
+  palette:
+    primary: slate blue
+  logo: assets/mark-white.svg
+  favicon: assets/favicon.ico
+  icon:
+    repo: fontawesome/brands/github
