@@ -1,0 +1,4 @@
+/* don't show home page in navigation */
+.md-nav--primary > .md-nav__list > .md-nav__item:first-child {
+  display: none;
+}

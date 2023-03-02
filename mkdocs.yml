@@ -14,11 +14,14 @@ plugins:
   - macros
 repo_url: https://github.com/apppackio/iam-policy-library/
 edit_uri: edit/main/src/
+extra_css:
+  - assets/extra.css
 theme:
   name: material
   custom_dir: theme_overrides
   features:
     - content.code.copy
+    - toc.integrate
   palette:
     primary: slate blue
   logo: assets/mark-white.svg
