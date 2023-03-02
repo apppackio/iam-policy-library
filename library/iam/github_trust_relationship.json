@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "GitHubActionsRepoTrust",
+      "Effect": "Allow",
+      "Principal": {
+        "Federated": "arn:${Partition}:iam::${Account}:oidc-provider/token.actions.githubusercontent.com"
+      },
+      "Action": ["sts:TagSession", "sts:AssumeRoleWithWebIdentity"],
+      "Condition": {
+        "StringLike": {
+          "token.actions.githubusercontent.com:sub": "repo:${GitHubOrg}/${GitHubRepo}:*"
+        }
+      }
+    }
+  ]
+}
