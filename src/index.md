@@ -1,5 +1,7 @@
 ---
 title: 🏠 Home
+hide:
+  - toc
 ---
 
 # IAM Policy Library
