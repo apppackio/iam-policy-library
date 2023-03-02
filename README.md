@@ -6,9 +6,9 @@ Getting IAM Policies just right is a pain in the butt and the prebuilt AWS polic
 
 ## 🤬 Hate IAM Policies and looking for something better?
 
-You're not alone! We made [AppPack](https://apppack.io?utm_source=github) because working with AWS is challenging and you've got other things to worry about. AppPack makes deploying web apps to AWS dead simple and focuses on a great developer experience for your team.
+You're not alone! We made [AppPack](https://apppack.io?utm_source=iam-policy-library) because working with AWS is challenging and you've got other things to worry about. AppPack makes deploying web apps to AWS dead simple and focuses on a great developer experience for your team.
 
-👉 Check out it out at [apppack.io](https://apppack.io?utm_source=github)
+👉 Check out it out at [apppack.io](https://apppack.io?utm_source=iam-policy-library) 👈
 
 ---
 
@@ -36,3 +36,7 @@ Prereqs:
 pdm install
 make serve
 ```
+
+### Deployment
+
+Hosted on GitHub Pages and handled via GitHub Actions. Push to `main` to deploy.
