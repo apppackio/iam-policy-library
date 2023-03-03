@@ -1,0 +1,14 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "EcrPublicLogin",
+      "Effect": "Allow",
+      "Action": [
+        "ecr-public:GetAuthorizationToken",
+        "sts:GetServiceBearerToken"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

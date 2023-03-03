@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ECRPushPublicImage",
+      "Effect": "Allow",
+      "Action": [
+        "ecr-public:BatchCheckLayerAvailability",
+        "ecr-public:CompleteLayerUpload",
+        "ecr-public:DescribeImages",
+        "ecr-public:InitiateLayerUpload",
+        "ecr-public:PutImage",
+        "ecr-public:UploadLayerPart"
+      ],
+      "Resource": "arn:${Partition}:ecr:${Region}:${Account}:repository/${RepositoryName}"
+    }
+  ]
+}
