@@ -1,0 +1,11 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "EcsExecConnect",
+      "Effect": "Allow",
+      "Action": "ecs:ExecuteCommand",
+      "Resource": "arn:${Partition}:ecs:${Region}:${Account}:cluster/${ClusterName}"
+    }
+  ]
+}
