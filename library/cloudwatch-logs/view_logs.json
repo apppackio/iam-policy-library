@@ -1,0 +1,40 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ListLogGroups",
+      "Effect": "Allow",
+      "Action": "logs:DescribeLogGroups",
+      "Resource": "*"
+    },
+    {
+      "Sid": "ViewLogGroup",
+      "Effect": "Allow",
+      "Action": [
+        "logs:DescribeLogStreams",
+        "logs:FilterLogEvents",
+        "logs:GetLogGroupFields"
+      ],
+      "Resource": "arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}"
+    },
+    {
+      "Sid": "ViewLogEvents",
+      "Effect": "Allow",
+      "Action": "logs:GetLogEvents",
+      "Resource": "arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:*"
+    },
+    {
+      "Sid": "LogInsights",
+      "Effect": "Allow",
+      "Action": [
+        "logs:DescribeQueryDefinitions",
+        "logs:DescribeQueries",
+        "logs:GetLogRecord",
+        "logs:GetQueryResults",
+        "logs:StartQuery",
+        "logs:StopQuery"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
