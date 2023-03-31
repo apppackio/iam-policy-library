@@ -2,14 +2,14 @@ data "aws_iam_policy_document" "read_write_bucket_with_prefix" {
   statement {
     sid       = "FindBucket"
     effect    = "Allow"
-    resources = ["arn:aws:${Partition}:::${Bucket}"]
+    resources = ["arn:${Partition}:::${Bucket}"]
     actions   = ["s3:GetBucketLocation"]
   }
 
   statement {
     sid       = "ListBucketWithPrefix"
     effect    = "Allow"
-    resources = ["arn:aws:${Partition}:::${Bucket}"]
+    resources = ["arn:${Partition}:::${Bucket}"]
     actions   = ["s3:ListBucket"]
 
     condition {

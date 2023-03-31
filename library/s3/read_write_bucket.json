@@ -5,7 +5,7 @@
       "Sid": "FindAndListBucket",
       "Effect": "Allow",
       "Action": ["s3:GetBucketLocation", "s3:ListBucket"],
-      "Resource": "arn:aws:${Partition}:::${Bucket}"
+      "Resource": "arn:${Partition}:::${Bucket}"
     },
     {
       "Sid": "ManageObjects",
