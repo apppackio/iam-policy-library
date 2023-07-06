@@ -2,7 +2,7 @@ data "aws_iam_policy_document" "read_write_bucket" {
   statement {
     sid       = "FindAndListBucket"
     effect    = "Allow"
-    resources = ["arn:${Partition}:::${Bucket}"]
+    resources = ["arn:${Partition}:s3:::${Bucket}"]
 
     actions = [
       "s3:GetBucketLocation",

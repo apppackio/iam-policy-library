@@ -5,13 +5,13 @@
       "Sid": "FindBucket",
       "Effect": "Allow",
       "Action": "s3:GetBucketLocation",
-      "Resource": "arn:${Partition}:::${Bucket}"
+      "Resource": "arn:${Partition}:s3:::${Bucket}"
     },
     {
       "Sid": "ListBucketWithPrefix",
       "Effect": "Allow",
       "Action": "s3:ListBucket",
-      "Resource": "arn:${Partition}:::${Bucket}",
+      "Resource": "arn:${Partition}:s3:::${Bucket}",
       "Condition": {
         "StringLike": {
           "s3:prefix": "${Prefix}/*"

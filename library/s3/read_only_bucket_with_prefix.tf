@@ -2,14 +2,14 @@ data "aws_iam_policy_document" "read_only_bucket_with_prefix" {
   statement {
     sid       = "FindBucket"
     effect    = "Allow"
-    resources = ["arn:${Partition}:::${Bucket}"]
+    resources = ["arn:${Partition}:s3:::${Bucket}"]
     actions   = ["s3:GetBucketLocation"]
   }
 
   statement {
     sid       = "ListBucketWithPrefix"
     effect    = "Allow"
-    resources = ["arn:${Partition}:::${Bucket}"]
+    resources = ["arn:${Partition}:s3:::${Bucket}"]
     actions   = ["s3:ListBucket"]
 
     condition {
